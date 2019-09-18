@@ -12,9 +12,17 @@ namespace WindowsFormsMemoryLeakSample
 {
     public partial class FormSecond : Form
     {
+        int count = Counter.Default.Count;
+
         public FormSecond()
         {
+            System.Diagnostics.Debug.WriteLine($"Created FormSecond {count}");
             InitializeComponent();
+        }
+
+        ~FormSecond()
+        {
+            System.Diagnostics.Debug.WriteLine($"Finalized FormSecond {count}");
         }
 
         private void buttonAlert_Click(object sender, EventArgs e)

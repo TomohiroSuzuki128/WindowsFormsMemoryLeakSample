@@ -17,6 +17,13 @@ namespace WindowsFormsMemoryLeakSample
             System.Diagnostics.Debug.WriteLine($"Created CloseButton {count}");
         }
 
+        protected override void Dispose(bool disposing)
+        {
+            System.Diagnostics.Debug.WriteLine($"Disposed CloseButton {count}");
+
+            base.Dispose(disposing);
+        }
+
         ~CloseButton()
         {
             System.Diagnostics.Debug.WriteLine($"Finalized CloseButton {count}");

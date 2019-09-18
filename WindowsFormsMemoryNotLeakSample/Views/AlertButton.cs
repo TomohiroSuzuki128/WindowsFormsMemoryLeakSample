@@ -17,6 +17,13 @@ namespace WindowsFormsMemoryLeakSample
             System.Diagnostics.Debug.WriteLine($"Created AlertButton {count}");
         }
 
+        protected override void Dispose(bool disposing)
+        {
+            System.Diagnostics.Debug.WriteLine($"Disposed AlertButton {count}");
+
+            base.Dispose(disposing);
+        }
+
         ~AlertButton()
         {
             System.Diagnostics.Debug.WriteLine($"Finalized AlertButton {count}");
